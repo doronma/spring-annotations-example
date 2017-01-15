@@ -1,7 +1,9 @@
 package model;
 
-import annotations.Loggable;
+import org.springframework.stereotype.Component;
 
+import annotations.Loggable;
+@Component
 public class Triangle {
 
 	public Triangle() {

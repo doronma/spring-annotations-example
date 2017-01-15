@@ -1,8 +1,11 @@
 package services;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import model.Circle;
 import model.Triangle;
-
+@Service
 public class ShapeService {
 	
 	private Circle circle;
@@ -12,6 +15,7 @@ public class ShapeService {
 		return circle;
 	}
 
+	@Autowired
 	public void setCircle(Circle circle) {
 		this.circle = circle;
 	}
@@ -19,7 +23,7 @@ public class ShapeService {
 	public Triangle getTriangle() {
 		return triangle;
 	}
-
+	@Autowired
 	public void setTriangle(Triangle triangle) {
 		this.triangle = triangle;
 	}

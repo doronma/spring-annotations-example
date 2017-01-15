@@ -7,10 +7,12 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.stereotype.Service;
 
 import model.Triangle;
 
 @Aspect
+@Service
 public class LoggingAspect {
 
 	public LoggingAspect() {
@@ -68,7 +70,7 @@ public class LoggingAspect {
 		String result = null;
 		try {
 			if (true) {
-				result = (String)proceedingJoinPoint.proceed();
+				result = (String) proceedingJoinPoint.proceed();
 				System.out.println("Around after...");
 			}
 		} catch (Throwable e) {
@@ -76,11 +78,11 @@ public class LoggingAspect {
 			e.printStackTrace();
 		}
 		return result;
-		
+
 	}
-	
-	 @Before("@annotation(annotations.Loggable)")
-	 public void beforeAnnotation(){
-		 System.out.println("Before Annotation...");
-	 }
+
+	@Before("@annotation(annotations.Loggable)")
+	public void beforeAnnotation() {
+		System.out.println("Before Annotation...");
+	}
 }

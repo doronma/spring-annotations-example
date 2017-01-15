@@ -11,15 +11,12 @@
 		<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
 		<context:component-scan base-package="beans" />
 		<context:component-scan base-package="services" />
+		<context:component-scan base-package="model" />
+		<context:component-scan base-package="aspects" />
 		<bean id="theResource" class="resources.SomeResource"></bean>
-		<bean name="triangle" class="model.Triangle">
-			<property name="name" value="Triangle Name"></property>
-		</bean>
-		<bean name="circle" class="model.Circle">
-			<property name="name" value="Circle Name"></property>
-		</bean>
-		<bean name="shapeService" class="services.ShapeService" autowire="byName"></bean>
-		<bean name="loggingAspect" class="aspects.LoggingAspect"></bean>
+		
+	
+	
 	</beans>
 
 
